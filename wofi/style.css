@@ -1,0 +1,84 @@
+/* Главное окно */
+window {
+    margin: 0px;
+    border: 2px solid #458588;
+    background-color: #282828;
+    border-radius: 10px;
+}
+
+/* Область ввода (где ты вводишь текст) */
+#input {
+    margin: 5px;
+    border: none;
+    color: #ebdbb2;
+    background-color: #1d2021;
+    border-radius: 5px;
+}
+
+/* Внутренний виджет (сердцевина окна) */
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Область с результатами (список приложений/действий) */
+#outer-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+/* Полоса прокрутки */
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+/* Текст */
+#text {
+    margin: 5px;
+    border: none;
+    color: #ebdbb2;
+}
+
+/* Отдельный элемент в списке (строка) */
+#entry {
+    border: none;
+    border-radius: 5px;
+}
+
+/* Состояние элемента: выделен, наведён курсором */
+#entry:selected {
+    background-color: #458588;
+}
+
+/* Состояние элемента: не выделен, но активен (для некоторых режимов) */
+#entry:selected #text {
+    color: #282828;
+}
+
+/* Главное окно */
+window {
+    margin: 0px;
+    border: 2px solid #458588;
+    background-color: #282828;
+    border-radius: 10px;
+    font-family: "Fira Code Nerd Font"; /* Важно: используй Nerd Font */
+}
+
+/* Область ввода */
+#input {
+    margin: 5px;
+    border: none;
+    color: #ebdbb2;
+    background-color: #1d2021;
+    border-radius: 5px;
+}
+
+/* Контейнер для каждого элемента (приложения) */
+#entry {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}

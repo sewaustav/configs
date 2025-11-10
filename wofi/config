@@ -2,3 +2,4 @@ width=500
 height=400
 location=center
 allow_markup=true
+allow_images=true

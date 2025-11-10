@@ -5,8 +5,7 @@
 }
 
 #waybar {
-    background: #1a1a1a;
-    border-bottom: 1px solid #ffffff;
+    background: #111111;
 }
 
 #workspaces button {
@@ -22,7 +21,11 @@
 
 #clock,
 #cpu,
+#network,
+#bluetooth,
 #memory,
+#custom-powermenu,
+#hyprland-language,
 #battery,
 #tray {
     padding: 0 10px;
