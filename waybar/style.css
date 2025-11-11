@@ -5,18 +5,44 @@
 }
 
 #waybar {
-    background: #111111;
+    background: transparent;
+}
+
+.modules-left {
+    padding-left: 10px;
+}
+
+.modules-center {
+    background-color: #7C91A6;
+    border-radius: 10px;
+}
+
+.modules-right {
+    padding-right: 3px;
+    border-radius: 10px;
+    background-color: #7C91A6;
+}
+
+#workspaces {
+    border-radius: 10px;
+    background-color: #7C91A6;
 }
 
 #workspaces button {
+    border-radius: 10px;
     padding: 0 5px;
     background: transparent;
     color: #ffffff;
 }
 
 #workspaces button.active {
-    background: #285577;
-    border-radius: 5px;
+    background: #4A99B2;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: #4A99B2;
+    border-radius: 10px;
 }
 
 #clock,
