@@ -30,7 +30,15 @@
     },*/
     "battery": {
         "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-full": "{capacity}% ",
+        "format-alt": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "warning": 20,
+            "critical": 10
+        }
     },
     "tray": {
         "spacing": 10
