@@ -19,8 +19,10 @@
         "all-outputs": true
     },
     "clock": {
-        "format": "{:%H:%M %d/%m/%Y}",
-        "on-click": "gsimplecal"
+        "format": "{:%H:%M %d.%m.%Y}",
+        "tooltip-format": "{:%A, %d %B %Y}",
+        "on-click": "gsimplecal",
+        "interval": 60
     },
     /*"cpu": {
         "format": "CPU {usage}%"
@@ -45,7 +47,7 @@
     },
     "network": {
         "tooltip": true,
-        "format-wifi": "  {essid}",
+        "format-wifi": "  ", // {essid}
         "format-ethernet": "󰈀 ",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
         "format-linked": "󰈀 {ifname} (No IP)",
