@@ -13,35 +13,37 @@
 }
 
 .modules-center {
-    background-color: #7C91A6;
+    background-color: #043150;
     border-radius: 10px;
 }
 
 .modules-right {
     padding-right: 3px;
     border-radius: 10px;
-    background-color: #7C91A6;
+    background-color: #043150;
 }
 
 #workspaces {
     border-radius: 10px;
-    background-color: #7C91A6;
+    background-color: #043150;
 }
 
 #workspaces button {
     border-radius: 10px;
     padding: 0 5px;
+    min-width: 20px;
+    min-height: 25px;
     background: transparent;
     color: #ffffff;
 }
 
 #workspaces button.active {
-    background: #4A99B2;
+    background: #25a2d8;
     border-radius: 10px;
 }
 
 #workspaces button:hover {
-    background: #4A99B2;
+    background: #25a2d8;
     border-radius: 10px;
 }
 
@@ -52,7 +54,21 @@
 #memory,
 #custom-powermenu,
 #hyprland-language,
+#pulseaudio,
 #battery,
 #tray {
     padding: 0 10px;
+}
+
+#pulseaudio {
+    background-color: #043150;
+    border-radius: 10px;
+    opacity: 0.8;
+    color: #ffffff;
+}
+
+#pulseaudio-slider {
+    min-width: 100px;
+    padding: 0 5px;
+    margin: 0 5px;
 }

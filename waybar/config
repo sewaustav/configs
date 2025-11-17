@@ -4,9 +4,9 @@
     "height": 30,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "hyprland/language", "bluetooth", "network", "custom/powermenu", "battery"],
-    "hyprland/workspaces": {
+    "modules-right": ["tray", "hyprland/language", "bluetooth", "network", "group/volume", "battery", "custom/powermenu"],
 
+    "hyprland/workspaces": {
         "persistent_workspaces": {
             "1": [],
             "2": [],
@@ -18,36 +18,34 @@
         },
         "all-outputs": true
     },
+
     "clock": {
         "format": "{:%H:%M %d.%m.%Y}",
         "tooltip-format": "{:%A, %d %B %Y}",
         "on-click": "gsimplecal",
         "interval": 60
     },
-    /*"cpu": {
-        "format": "CPU {usage}%"
-    },
-    "memory": {
-        "format": "RAM {}%"
-    },*/
+
     "battery": {
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-full": "{capacity}% ",
-        "format-alt": "{capacity}% {icon}",
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-full": " {capacity}%",
+        "format-alt": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""],
         "states": {
             "warning": 20,
             "critical": 10
         }
     },
+
     "tray": {
         "spacing": 10
     },
+
     "network": {
         "tooltip": true,
-        "format-wifi": "", // {essid}
+        "format-wifi": "",
         "format-ethernet": "󰈀 ",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
         "format-linked": "󰈀 {ifname} (No IP)",
@@ -57,28 +55,54 @@
         "interval": 2,
         "on-click-right": "/home/sewaustav/.config/hypr/scripts/wifi.py"
     },
+
     "bluetooth": {
-        "format": " {status}",
-        "format-disabled": "",
-        "format-connected": " {num_connections} connected",
+        "format": "",
+        "format-disabled": "-",
+        "format-connected": "",
         "on-click": "blueman-manager"
     },
+
     "custom/powermenu": {
         "format": "",
         "on-click": "wlogout -b 5",
         "tooltip": false
     },
-    "keyboard-state": {
-        "numlock": false,
-        "capslock": false,
-        "format": "{name} {layout}",
-        "format-pressed": "{name} {layout}",
-        "format-locked": "{name} {layout}"
-    },
+
     "hyprland/language": {
         "format": "{}",
         "format-en": "EN",
         "format-ru": "RU",
         "on-click": "hyprctl switchxkblayout next"
+    },
+    "group/volume": {
+      "orientation": "horizontal",
+      "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": true
+      },
+      "modules": [
+        "pulseaudio",
+        "pulseaudio/slider"
+      ]
+    },
+    "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-bluetooth": "{icon}  {volume}%",
+      "format-muted": "",
+      "format-icons": {
+        "headphone": "",
+        "speaker": "",
+        "default": ""
+      },
+      "tooltip": true,
+      "on-click": "pavucontrol",
+      "on-scroll-up": "pamixer -i 5",
+      "on-scroll-down": "pamixer -d 5"
+    },
+    "pulseaudio/slider": {
+      "min": 0,
+      "max": 100,
+      "orientation": "horizontal"
     }
 }
