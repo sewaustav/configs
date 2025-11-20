@@ -1,5 +1,4 @@
 #!/bin/bash
-# ~/.config/wofi/window-switcher.sh
 
 # Функция поиска иконки через .desktop файл
 find_icon_from_desktop() {
@@ -119,7 +118,7 @@ selection=$(echo "$windows" | while IFS='|' read -r address class; do
     else
         echo "$class"
     fi
-done | wofi --dmenu --conf ~/.config/wofi/window.conf --style ~/.config/wofi/window.css --prompt "Windows" --parse-search)
+done | wofi --dmenu --conf ~/.config/wofi/window.conf --style ~/.config/wofi/style.css --prompt "Windows" --parse-search)
 
 # Если что-то выбрано, переключаемся на это окно
 if [ -n "$selection" ]; then

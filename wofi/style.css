@@ -1,6 +1,6 @@
 window {
     margin: 0px;
-    border: 2px solid #458588;
+    border: 2px solid #89b4fa;
     background-color: #282828;
     border-radius: 10px;
 }
@@ -42,7 +42,7 @@ window {
 }
 
 #entry:selected {
-    background-color: #458588;
+    background-color: #89b4fa;
 }
 
 #entry:selected #text {
@@ -51,7 +51,7 @@ window {
 
 window {
     margin: 0px;
-    border: 2px solid #458588;
+    border: 2px solid #89b4fa;
     background-color: #282828;
     border-radius: 10px;
     font-family: "Fira Code Nerd Font"; /* Важно: используй Nerd Font */
