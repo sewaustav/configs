@@ -6,6 +6,8 @@
 
 #waybar {
     background: transparent;
+    /*background: #000000;
+    border-radius: 10px;*/
 }
 
 .modules-left {
@@ -13,19 +15,19 @@
 }
 
 .modules-center {
-    background-color: #043150;
+    background-color: #151719;
     border-radius: 10px;
 }
 
 .modules-right {
     padding-right: 3px;
     border-radius: 10px;
-    background-color: #043150;
+    background-color: #151719;
 }
 
 #workspaces {
     border-radius: 10px;
-    background-color: #043150;
+    background-color: #151719;
 }
 
 #workspaces button {
@@ -61,7 +63,7 @@
 }
 
 #pulseaudio {
-    background-color: #043150;
+    background-color: #151719;
     border-radius: 10px;
     opacity: 0.8;
     color: #ffffff;

@@ -1,0 +1,83 @@
+window {
+    margin: 0px;
+    border: 2px solid #89b4fa;
+    background-color: #1e1e2e;
+    border-radius: 10px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+}
+
+#input {
+    margin: 10px;
+    padding: 8px 12px;
+    border: 2px solid #45475a;
+    background-color: #181825;
+    color: #cdd6f4;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#input:focus {
+    border: 2px solid #89b4fa;
+    outline: none;
+}
+
+#inner-box {
+    margin: 10px;
+    padding: 5px;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    padding: 5px;
+}
+
+#text {
+    margin: 5px;
+    padding: 5px;
+    color: #cdd6f4;
+}
+
+#entry {
+    padding: 8px 12px;
+    margin: 3px;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #cdd6f4;
+}
+
+#entry:selected {
+    background-color: #89b4fa;
+    color: #1e1e2e;
+    font-weight: bold;
+}
+
+#entry:hover {
+    background-color: #45475a;
+}
+
+/* Иконки окон */
+#entry image {
+    margin-right: 10px;
+}
+
+/* Скроллбар */
+#scroll scrollbar {
+    background-color: transparent;
+}
+
+#scroll scrollbar slider {
+    background-color: #45475a;
+    border-radius: 4px;
+}
+
+#scroll scrollbar slider:hover {
+    background-color: #585b70;
+}
