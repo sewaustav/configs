@@ -1,14 +1,3 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-app=$(hyprctl activewindow -j | jq -r '.class')
-
-hyprctl dispatch togglefloating
-
-if [[ "$app" == "kitty" ]]; then
-    hyprctl dispatch resizeactive exact 800 520
-else
-    hyprctl dispatch resizeactive exact 800 600
-fi
-
-# Центрируем окно
-hyprctl dispatch centerwindow
+hyprctl dispatch exec "[float; size 800 520; center] kitty"
