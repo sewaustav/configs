@@ -29,7 +29,7 @@ def rofi_menu(options, prompt="Выберите:", message=None, theme=ROFI_THEM
         )
         return result.stdout.strip() if result.stdout.strip() else None
     except FileNotFoundError:
-        print("❌ Rofi не найден. Установи его: sudo apt install rofi")
+        print("❌ Rofi не найден. Установи его: sudo yay -S rofi")
         sys.exit(1)
 
 
@@ -113,6 +113,7 @@ def quick_connect_redmi():
 
 
 def main():
+    print("Hi")
     while True:
         choice = rofi_menu(
             [

@@ -49,7 +49,7 @@
         "format-ethernet": "󰈀 ",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
         "format-linked": "󰈀 {ifname} (No IP)",
-        "format-disconnected": "󰖪 ",
+        "format-disconnected": "󰖪",
         "tooltip-format-disconnected": "Disconnected",
         "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "interval": 2,
@@ -58,7 +58,7 @@
 
     "bluetooth": {
         "format": "",
-        "format-disabled": "-",
+        "format-disabled": "󰂲",
         "format-connected": "",
         "on-click": "blueman-manager"
     },
@@ -79,7 +79,8 @@
       "orientation": "horizontal",
       "drawer": {
       "transition-duration": 300,
-      "transition-left-to-right": true
+      "transition-left-to-right": true,
+      "click-to-reveal": true,
       },
       "modules": [
         "pulseaudio",
@@ -96,13 +97,13 @@
         "default": ""
       },
       "tooltip": true,
-      "on-click": "pavucontrol",
+      //"on-click": "pavucontrol",
       "on-scroll-up": "pamixer -i 5",
       "on-scroll-down": "pamixer -d 5"
     },
     "pulseaudio/slider": {
       "min": 0,
-      "max": 100,
+      "max": 150,
       "orientation": "horizontal"
     }
 }

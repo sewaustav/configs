@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# Функция поиска иконки через .desktop файл
 find_icon_from_desktop() {
     local app_class="$1"
     local icon_name=""
 
-    # Пути к .desktop файлам
     local desktop_dirs=(
         "$HOME/.local/share/applications"
         "/usr/share/applications"
@@ -14,14 +12,12 @@ find_icon_from_desktop() {
         "$HOME/.local/share/flatpak/exports/share/applications"
     )
 
-    # Варианты названий .desktop файлов
     local desktop_variants=(
         "${app_class}.desktop"
         "${app_class,,}.desktop"
         "$(echo $app_class | tr '[:upper:]' '[:lower:]').desktop"
     )
 
-    # Ищем .desktop файл
     for dir in "${desktop_dirs[@]}"; do
         if [ -d "$dir" ]; then
             for variant in "${desktop_variants[@]}"; do
@@ -37,7 +33,6 @@ find_icon_from_desktop() {
         fi
     done
 
-    # Если не нашли точное совпадение, ищем по содержимому
     for dir in "${desktop_dirs[@]}"; do
         if [ -d "$dir" ]; then
             local found_file=$(grep -l "StartupWMClass=${app_class}" "$dir"/*.desktop 2>/dev/null | head -n1)
@@ -54,17 +49,14 @@ find_icon_from_desktop() {
     return 1
 }
 
-# Функция поиска полного пути к иконке в Papirus
 find_icon_path() {
     local icon_name="$1"
 
-    # Если это уже полный путь, возвращаем его
     if [ -f "$icon_name" ]; then
         echo "$icon_name"
         return 0
     fi
 
-    # Приоритетные пути для Papirus
     local icon_dirs=(
         "/usr/share/icons/Papirus/48x48/apps"
         "/usr/share/icons/Papirus-Dark/48x48/apps"
@@ -74,7 +66,6 @@ find_icon_path() {
         "$HOME/.icons/Papirus/48x48/apps"
     )
 
-    # Ищем иконку
     for dir in "${icon_dirs[@]}"; do
         if [ -d "$dir" ]; then
             if [ -f "$dir/${icon_name}.svg" ]; then
@@ -87,7 +78,6 @@ find_icon_path() {
         fi
     done
 
-    # Ищем в любых подпапках Papirus
     local found_icon=$(find /usr/share/icons/Papirus*/48x48/ -name "${icon_name}.*" 2>/dev/null | head -n1)
     if [ -n "$found_icon" ]; then
         echo "$found_icon"
@@ -97,20 +87,15 @@ find_icon_path() {
     return 1
 }
 
-# Получаем список окон из hyprctl
 windows=$(hyprctl clients -j | jq -r '.[] | "\(.address)|\(.class)"')
 
-# Формируем список для wofi с иконками
 selection=$(echo "$windows" | while IFS='|' read -r address class; do
-    # Сначала пробуем найти иконку через .desktop файл
     icon_name=$(find_icon_from_desktop "$class")
 
-    # Если не нашли, используем class как имя иконки
     if [ -z "$icon_name" ]; then
         icon_name="$class"
     fi
 
-    # Теперь ищем полный путь к иконке
     icon_path=$(find_icon_path "$icon_name")
 
     if [ -n "$icon_path" ]; then
@@ -120,12 +105,9 @@ selection=$(echo "$windows" | while IFS='|' read -r address class; do
     fi
 done | wofi --dmenu --conf ~/.config/wofi/window.conf --style ~/.config/wofi/window.css --prompt "Windows" --parse-search)
 
-# Если что-то выбрано, переключаемся на это окно
 if [ -n "$selection" ]; then
-    # Убираем img: префикс если есть
     clean_selection=$(echo "$selection" | sed 's/img:.*:text://')
 
-    # Получаем адрес выбранного окна
     address=$(echo "$windows" | grep -F "|${clean_selection}" | head -n1 | cut -d'|' -f1)
 
     if [ -n "$address" ]; then
