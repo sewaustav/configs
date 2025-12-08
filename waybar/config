@@ -22,7 +22,7 @@
     "clock": {
         "format": "{:%H:%M %d.%m.%Y}",
         "tooltip-format": "{:%A, %d %B %Y}",
-        "on-click": "gsimplecal",
+        "on-click": "yad --calendar",
         "interval": 60
     },
 
@@ -106,4 +106,6 @@
       "max": 150,
       "orientation": "horizontal"
     }
+
+
 }

@@ -1,0 +1,64 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredPackages">
+        <list>
+          <option value="alembic" />
+          <option value="annotated-types" />
+          <option value="anyio" />
+          <option value="asyncpg" />
+          <option value="authx" />
+          <option value="bcrypt" />
+          <option value="certifi" />
+          <option value="cffi" />
+          <option value="charset-normalizer" />
+          <option value="click" />
+          <option value="cryptography" />
+          <option value="dotenv" />
+          <option value="ecdsa" />
+          <option value="fastapi" />
+          <option value="greenlet" />
+          <option value="h11" />
+          <option value="idna" />
+          <option value="itsdangerous" />
+          <option value="mako" />
+          <option value="markupsafe" />
+          <option value="passlib" />
+          <option value="phonenumbers" />
+          <option value="psycopg2" />
+          <option value="pyasn1" />
+          <option value="pycparser" />
+          <option value="pydantic" />
+          <option value="pydantic-core" />
+          <option value="pydantic-settings" />
+          <option value="pyjwt" />
+          <option value="python-dateutil" />
+          <option value="python-dotenv" />
+          <option value="python-jose" />
+          <option value="pytz" />
+          <option value="requests" />
+          <option value="rsa" />
+          <option value="six" />
+          <option value="sniffio" />
+          <option value="sqlalchemy" />
+          <option value="starlette" />
+          <option value="typing-extensions" />
+          <option value="typing-inspection" />
+          <option value="urllib3" />
+          <option value="uvicorn" />
+          <option value="vosk" />
+          <option value="pymorphy2" />
+          <option value="Levenshtein" />
+          <option value="pyautogui" />
+          <option value="sounddevice" />
+          <option value="torch" />
+          <option value="torchaudio" />
+          <option value="pygame" />
+          <option value="pvrecorder" />
+          <option value="pvporcupine" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
