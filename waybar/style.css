@@ -20,7 +20,7 @@
 }
 
 .modules-right {
-    padding-right: 3px;
+    padding-right: 10px;
     border-radius: 10px;
     background-color: #151719;
 }
@@ -55,6 +55,7 @@
 #bluetooth,
 #memory,
 #custom-powermenu,
+#custom-notification,
 #hyprland-language,
 #pulseaudio,
 #battery,
