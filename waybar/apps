@@ -1,0 +1,6 @@
+{
+  "layer": "top",
+  "position": "left",
+  "width": 40,
+  "modules-center": ["hyprland/window"]
+}
