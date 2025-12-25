@@ -11,7 +11,9 @@
 }
 
 .modules-left {
-    padding-left: 10px;
+    padding-left: 2px;
+    background-color: #151719;
+    border-radius: 10px;
 }
 
 .modules-center {
@@ -31,12 +33,8 @@
 }
 
 #workspaces button {
-    border-radius: 10px;
-    padding: 0 5px;
-    min-width: 20px;
-    min-height: 25px;
-    background: transparent;
-    color: #ffffff;
+    min-width: 28px;
+    padding: 0 6px 0 12px;
 }
 
 #workspaces button.active {
@@ -73,6 +71,7 @@
     padding: 0;
     margin: 0;
 }
+
 #pulseaudio-slider slider {
     min-height: 0px;
     min-width: 0px;
@@ -81,14 +80,37 @@
     border: none;
     box-shadow: none;
 }
+
 #pulseaudio-slider trough {
     min-height: 10px;
     min-width: 100px;
     border-radius: 5px;
     background: black;
 }
+
 #pulseaudio-slider highlight {
     min-width: 10px;
     border-radius: 5px;
     background: #89b4fa;
+}
+
+#wlr-taskbar {
+    background-color: #151719;
+}
+
+#wlr-taskbar button {
+    background: transparent;
+}
+
+#wlr-taskbar button:hover {
+    background: rgba(37, 162, 216, 0.5);
+}
+
+#wlr-taskbar button.active {
+    background: #25a2d8;
+}
+
+#custom-workspaces-button {
+    padding: 0 10px;
+    color: white;
 }

@@ -2,21 +2,55 @@
     "layer": "top",
     "position": "top",
     "height": 30,
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["group/workspaces-group"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "hyprland/language", "custom/notification", "bluetooth", "network", "group/volume", "battery", "custom/powermenu"],
 
-    "hyprland/workspaces": {
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": []
+    "group/workspaces-group": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "workspaces-drawer",
+            "click-to-reveal": true
         },
-        "all-outputs": true
+        "modules": [
+            "custom/workspaces-button",
+            "hyprland/workspaces"
+        ]
+    },
+
+    "custom/workspaces-button": {
+        "format": "󰣇 ",
+        "tooltip": false,
+
+        "class": "workspaces-button",
+        "on-scroll-up": "",
+        "on-scroll-down": ""
+    },
+
+    "hyprland/workspaces": {
+        "format": "  {windows}",
+        "on-scroll-up": "",
+        "on-scroll-down": "",
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "workspace-taskbar": {
+            "enable": true,
+            "update-active-window": true,
+            "format": "{icon}",
+            "icon-size": 18,
+            "on-click-window": "~/.config/waybar/applets/focus-window.sh {address} {button}"
+        }
+    },
+
+    "wlr/taskbar": {
+        "icon-size": 18,
+        "spacing": 6,
+        "grouped": true,
+        "tooltip": true,
+        "on-click": "activate",
+        "on-click-middle": "close"
     },
 
     "clock": {
