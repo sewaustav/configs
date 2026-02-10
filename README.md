@@ -1,0 +1,1 @@
+My dot files for arch hyprland setup. Waybar + swaync + wofi + wlogout + kitty + nvim. Dot files includes folowing scripts: mouse/touchpad controller, wifi menu script(python/wofi), open programs controller(bash/wofi)
