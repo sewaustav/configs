@@ -10,3 +10,5 @@
 !wlogout/
 !swaync/
 !zsh(copy)/
+!zed/
+!libinput-gestures.conf
