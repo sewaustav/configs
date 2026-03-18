@@ -26,7 +26,7 @@
   "languages": {
     "Python": {
       "tab_size": 4,
-      "hard_tabs": true
+      "hard_tabs": false
     },
     "Go": {
       "inlay_hints": {

@@ -17,7 +17,12 @@ command = "hyprctl keyword 'device[synaptics-tm3336-001]:enabled' "
 
 for i in range(len(output)):
     if "Mouse at" in output[i]:
-        mice.append(output[i + 1].strip("\t"))
+        name = output[i+1].strip("\t") 
+        if "virtual" in name:
+            continue
+        mice.append(name)
+        
+        
 
 if len(mice) > 1:
     res = os.popen(command + "'false'").read()
@@ -25,6 +30,7 @@ if len(mice) > 1:
 else:
     res = os.popen(command + "'true'").read()
     toggle_status(True)
+
 active_devices = len(mice)
 
 context = pyudev.Context()
