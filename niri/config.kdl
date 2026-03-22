@@ -12,11 +12,12 @@ input {
   touchpad {
     disabled-on-external-mouse
     tap
+    natural-scroll
     accel-speed 0.1
     accel-profile "adaptive"
     scroll-method "edge"
   }
-
+  
   mouse {
 
   }
@@ -27,6 +28,8 @@ input {
 
   focus-follows-mouse max-scroll-amount="0%"
 }
+
+
 
 layout {
   gaps 5
@@ -80,8 +83,7 @@ spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-spawn-sh-at-startup "dbus-update-activation-environment --all"
-spawn-at-startup "/usr/lib/xdg-desktop-portal-gnome"
+spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=niri; systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gnome; systemctl --user start pipewire wireplumber xdg-desktop-portal"
 
 hotkey-overlay {
 
@@ -155,7 +157,7 @@ workspace "1"
 workspace "2"
 workspace "3"
 workspace "4"
-workspace "5"
+
 
 window-rule {
     match app-id="dev.zed.Zed"
@@ -179,6 +181,7 @@ window-rule {
   match app-id="firefox"
   open-maximized-to-edges true
   open-on-workspace "3"
+  open-focused true
 }
 
 window-rule {
@@ -190,11 +193,11 @@ window-rule {
     open-focused true
 }
 
-window-rule {
-  match app-id="org.telegram.desktop"
-  open-on-workspace "5"
-  open-floating true
-}
+// window-rule {
+//   match app-id="org.telegram.desktop"
+//   open-on-workspace "5"
+//   open-floating true
+// }
 
 window-rule {
   match app-id="kitty" title="kitty-tiling"
@@ -295,7 +298,7 @@ binds {
   XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
   // Open/close the Overview: a zoomed-out view of workspaces and windows.
-  Mod+O repeat=false { toggle-overview; }
+  Mod+Tab repeat=false { toggle-overview; }
 
   //wlogout
   Mod+Z { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }

@@ -21,7 +21,15 @@
             "nemo",
             "code-oss",
             "pycharm",
-            "org.telegram.desktop"
+            "org.telegram.desktop",
+            "onlyoffice-desktopeditors",
+            "chrome-agimnkijcaahngcdmfeangaknmldooml-Default",
+            "anytype",
+            "org.gnome.gedit",
+            "jetbrains-goland-eecb65e9-7305-46da-b339-d3b73b59b623",
+            "jetbrains-toolbox",
+            "chrome-jhfafgojnlneaffmkkjbcpnadneeocbk-Default",
+            "qalculate-gtk"
         ],
         "position": "center",
         "screenshotAnnotationTool": "",
@@ -46,7 +54,7 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0.93,
+        "backgroundOpacity": 1,
         "barType": "simple",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
@@ -79,7 +87,7 @@
         "showCapsule": true,
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
-        "useSeparateOpacity": false,
+        "useSeparateOpacity": true,
         "widgetSpacing": 7,
         "widgets": {
             "center": [
@@ -238,9 +246,9 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Noctalia (default)",
+        "predefinedScheme": "Catppuccin",
         "schedulingMode": "off",
-        "useWallpaperColors": true
+        "useWallpaperColors": false
     },
     "controlCenter": {
         "cards": [
@@ -297,7 +305,13 @@
                     "id": "KeepAwake"
                 },
                 {
-                    "id": "NightLight"
+                    "defaultSettings": {
+                        "compactMode": false,
+                        "defaultDuration": 0,
+                        "iconColor": "none",
+                        "textColor": "none"
+                    },
+                    "id": "plugin:timer"
                 }
             ]
         }
@@ -352,7 +366,7 @@
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
         "compactLockScreen": false,
-        "dimmerOpacity": 0.2,
+        "dimmerOpacity": 0,
         "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
@@ -418,7 +432,7 @@
     },
     "idle": {
         "customCommands": "[]",
-        "enabled": false,
+        "enabled": true,
         "fadeDuration": 5,
         "lockCommand": "",
         "lockTimeout": 660,
@@ -476,7 +490,7 @@
         "density": "default",
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": false,
-        "enableMarkdown": false,
+        "enableMarkdown": true,
         "enableMediaToast": false,
         "enabled": true,
         "location": "top_right",
