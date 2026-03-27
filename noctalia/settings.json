@@ -285,9 +285,6 @@
                     "id": "Network"
                 },
                 {
-                    "id": "Bluetooth"
-                },
-                {
                     "id": "WallpaperSelector"
                 },
                 {
@@ -297,9 +294,6 @@
             "right": [
                 {
                     "id": "Notifications"
-                },
-                {
-                    "id": "PowerProfile"
                 },
                 {
                     "id": "KeepAwake"
@@ -332,7 +326,7 @@
         "displayMode": "auto_hide",
         "dockType": "floating",
         "enabled": false,
-        "floatingRatio": 1,
+        "floatingRatio": 0.81,
         "groupApps": false,
         "groupClickAction": "cycle",
         "groupContextMenuMode": "extended",
@@ -347,6 +341,9 @@
         ],
         "onlySameOutput": true,
         "pinnedApps": [
+            "chromium",
+            "org.telegram.desktop",
+            "dev.zed.Zed"
         ],
         "pinnedStatic": false,
         "position": "bottom",
@@ -410,9 +407,9 @@
         "reverseScroll": false,
         "scaleRatio": 1,
         "screenRadiusRatio": 1,
-        "shadowDirection": "bottom_right",
-        "shadowOffsetX": 2,
-        "shadowOffsetY": 3,
+        "shadowDirection": "top",
+        "shadowOffsetX": 0,
+        "shadowOffsetY": -3,
         "showChangelogOnStartup": true,
         "showHibernateOnLockScreen": false,
         "showScreenCorners": false,
@@ -626,15 +623,15 @@
     "templates": {
         "activeTemplates": [
         ],
-        "enableUserTheming": false
+        "enableUserTheming": true
     },
     "ui": {
         "boxBorderEnabled": false,
-        "fontDefault": "Sans Serif",
+        "fontDefault": "JetBrainsMono Nerd Font",
         "fontDefaultScale": 1,
         "fontFixed": "monospace",
         "fontFixedScale": 1,
-        "panelBackgroundOpacity": 0.93,
+        "panelBackgroundOpacity": 1,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
