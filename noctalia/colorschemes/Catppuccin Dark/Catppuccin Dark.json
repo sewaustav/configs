@@ -14,5 +14,6 @@
     "mShadow": "#11111b",
     "mSurface": "#000000",
     "mSurfaceVariant": "#252525",
-    "mTertiary": "#94e2d5"
+    "mTertiary": "#94e2d5",
+    "is_script_works": "1"
 }

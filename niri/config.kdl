@@ -83,6 +83,11 @@ hotkey-overlay {
 
 }
 
+layer-rule {
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
+}
+
 prefer-no-csd
 screenshot-path "~/screens/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
