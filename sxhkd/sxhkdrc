@@ -1,0 +1,86 @@
+# --- Основные программы ---
+
+# Терминал Kitty
+super + Return
+	kitty
+
+# Rofi меню
+super + a
+	rofi -show drun
+	
+# Просмотр истории уведомлений в меню
+super + shift + n
+    dunstctl history | jq '.data[0] | reverse[] | .message.data' | rofi -dmenu -p "Уведомления"
+
+# Скриншоты через Flameshot
+Print
+	flameshot gui
+
+# --- Управление звуком и яркостью ---
+
+# Звук (используем amixer, обычно стоит везде)
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+XF86AudioLowerVolume
+	amixer set Master 5%-
+XF86AudioMute
+	amixer set Master toggle
+
+# Яркость (нужен пакет brightnessctl или light)
+XF86MonBrightnessUp
+	brightnessctl set +5%
+XF86MonBrightnessDown
+	brightnessctl set 5%-
+
+# --- Управление окнами и состоянием ---
+
+# Закрыть окно
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# Переключение: Тайлинг / Плавающее окно
+super + x
+	bspc node -t "~"{floating,tiled}
+
+# Развернуть на весь экран (Fullscreen)
+super + f
+	bspc node -t "~"fullscreen
+
+# --- Навигация по рабочим столам ---
+Alt_R
+    bspc desktop -f prev.local
+
+Control_R
+	bspc desktop -f next.local
+
+# Перейти на рабочий стол (super + 1-5)
+super + {1-5}
+	bspc desktop -f '^{1-5}'
+
+# Переместить окно на рабочий стол (super + shift + 1-5)
+super + shift + {1-5}
+	bspc node -d '^{1-5}'
+
+# --- Фокус и Ресайз (на мое усмотрение) ---
+
+# Фокус окна (Super + стрелки)
+super + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east}
+
+# Умный ресайз (Super + Alt + стрелки)
+super + alt + {Left,Down,Up,Right}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# --- Система ---
+
+# Перезагрузка sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Перезагрузка bspwm
+super + alt + r
+	bspc wm -r
+	
+# Выход из bspwm
+super + alt + q
+	bspc quit

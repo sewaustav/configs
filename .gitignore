@@ -6,6 +6,7 @@
 !flameshot/
 !rofi/
 !kitty/
+!alacritty/
 !nvim/
 !wlogout/
 !swaync/
@@ -14,3 +15,11 @@
 !libinput-gestures.conf
 !niri/
 !noctalia/
+!sway/
+!picom/
+!polybar/
+!awesome/
+!bspwm/
+!sxhkd/
+!qtile/
+!wayfire.ini

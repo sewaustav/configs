@@ -27,18 +27,16 @@
             "onlyoffice-desktopeditors",
             "chrome-agimnkijcaahngcdmfeangaknmldooml-Default",
             "anytype",
-            "org.gnome.gedit",
-            "jetbrains-toolbox",
             "chrome-jhfafgojnlneaffmkkjbcpnadneeocbk-Default",
             "qalculate-gtk",
             "org.gnome.Boxes",
             "com.discordapp.Discord",
             "org.pulseaudio.pavucontrol",
             "nwg-look",
-            "com.obsproject.Studio",
-            "jetbrains-goland-eecb65e9-7305-46da-b339-d3b73b59b623"
+            "jetbrains-goland-eecb65e9-7305-46da-b339-d3b73b59b623",
+            "org.x.editor"
         ],
-        "position": "center",
+        "position": "top_center",
         "screenshotAnnotationTool": "",
         "showCategories": true,
         "showIconBackground": false,
@@ -306,11 +304,11 @@
                 "id": "audio-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "brightness-card"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "weather-card"
             },
             {
@@ -329,17 +327,6 @@
                     "id": "WallpaperSelector"
                 },
                 {
-                    "id": "NoctaliaPerformance"
-                }
-            ],
-            "right": [
-                {
-                    "id": "Notifications"
-                },
-                {
-                    "id": "KeepAwake"
-                },
-                {
                     "defaultSettings": {
                         "compactMode": false,
                         "defaultDuration": 0,
@@ -347,7 +334,32 @@
                         "textColor": "none"
                     },
                     "id": "plugin:timer"
+                },
+                {
+                    "id": "KeepAwake"
+                },
+                {
+                    "id": "NoctaliaPerformance"
+                },
+                {
+                    "id": "Network"
+                },
+                {
+                    "id": "Notifications"
+                },
+                {
+                    "enableOnStateLogic": false,
+                    "generalTooltipText": "bluetooth",
+                    "icon": "bluetooth",
+                    "id": "CustomButton",
+                    "onClicked": "blueman-manager",
+                    "onMiddleClicked": "",
+                    "onRightClicked": "",
+                    "showExecTooltip": false,
+                    "stateChecksJson": "[]"
                 }
+            ],
+            "right": [
             ]
         }
     },
@@ -564,18 +576,18 @@
     "notifications": {
         "backgroundOpacity": 1,
         "clearDismissed": true,
-        "criticalUrgencyDuration": 15,
+        "criticalUrgencyDuration": 3,
         "density": "default",
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": false,
         "enableMarkdown": true,
         "enableMediaToast": false,
         "enabled": true,
-        "location": "bottom_right",
+        "location": "top",
         "lowUrgencyDuration": 3,
         "monitors": [
         ],
-        "normalUrgencyDuration": 8,
+        "normalUrgencyDuration": 3,
         "overlayLayer": true,
         "respectExpireTimeout": false,
         "saveToHistory": {
@@ -751,7 +763,6 @@
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": [
-            "fade",
             "disc"
         ],
         "useOriginalImages": false,

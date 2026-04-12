@@ -3,6 +3,7 @@ input {
   keyboard {
     xkb {
       layout "us,ru"
+      // options "grp:caps_toggle"
       options "grp:win_space_toggle"
     }
     numlock
@@ -193,13 +194,15 @@ window-rule {
 }
 
 window-rule {
-  match app-id="kitty" title="kitty-tiling"
+  match app-id="" title="kitty-tiling"
   open-floating false
+  opacity 0.96
 }
 
 window-rule {
-  match app-id="" title="kitty-tiling"
-  open-floating false
+    match app-id="xed"
+    open-focused true
+    default-column-width { proportion 0.25; }
 }
 
 window-rule {
@@ -207,6 +210,12 @@ window-rule {
     open-floating true
     default-column-width { proportion 0.73; }
     default-window-height { fixed 620; }
+    opacity 0.96
+}
+
+window-rule {
+    match app-id="org.telegram.desktop"
+    default-column-width { proportion 0.66; }
 }
 
 window-rule {
@@ -263,7 +272,7 @@ binds {
 
   Mod+Shift+Slash { show-hotkey-overlay; }
 
-  Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+  Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty" "--title" "kitty-tiling"; }
 
   // Audio control
   XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0"; }
@@ -296,6 +305,8 @@ binds {
 
   Mod+Left  { focus-column-left; }
   Mod+Right { focus-column-right; }
+  Alt+Left { focus-column-left; }
+  Alt+Right { focus-column-right; }
   
   Mod+H { focus-column-left; }
   Mod+L { focus-column-right; }
@@ -343,6 +354,8 @@ binds {
   
   Mod+Down      cooldown-ms=150 { focus-workspace-down; }
   Mod+Up        cooldown-ms=150 { focus-workspace-up; }
+  Alt+Down      cooldown-ms=150 { focus-workspace-down; }
+  Alt+Up        cooldown-ms=150 { focus-workspace-up; }
 
   Mod+WheelScrollRight      { focus-column-right; }
   Mod+WheelScrollLeft       { focus-column-left; }
