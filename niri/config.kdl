@@ -11,6 +11,7 @@ input {
 
   touchpad {
     disabled-on-external-mouse
+    dwt
     tap
     natural-scroll
     accel-speed 0.1
@@ -29,12 +30,12 @@ input {
   focus-follows-mouse max-scroll-amount="0%"
 }
 
+
 layout {
   gaps 5
 
   center-focused-column "never"
 
-  
   preset-column-widths {
     proportion 0.5
     proportion 0.75
@@ -60,7 +61,7 @@ layout {
   border {
     width 2
     inactive-color "#3c3836"
-    active-gradient from="#33ccffee" to="#00ff99ee" angle=45
+    active-gradient from="#00ff99ee" to="#33ccffee" angle=45
     urgent-color "#cc241d"
   }
 
@@ -74,19 +75,30 @@ cursor {
     xcursor-size 24
 }
 
-spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
+// layer-rule {
+//   match namespace="^noctalia-wallpaper*"
+//   place-within-backdrop true
+// }
+
+// spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
+spawn-at-startup "swaync"
+spawn-sh-at-startup "./Waybar/build/waybar"
+spawn-at-startup "hypridle"
+spawn-at-startup "awww-daemon"
+spawn-sh-at-startup "awww img ~/Pictures/wallpapers/2026-Ferrari-SF-26-003-1440w.jpg"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=niri; systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gnome; systemctl --user start pipewire wireplumber xdg-desktop-portal"
 
 hotkey-overlay {
-
+    skip-at-startup
 }
 
-layer-rule {
-  match namespace="^noctalia-overview*"
-  place-within-backdrop true
+overview {
+  // Choose your favorite color.
+  // backdrop-color "#356cac"
+  backdrop-color "#4c4f69"
 }
 
 prefer-no-csd
@@ -160,6 +172,11 @@ workspace "3"
 workspace "4"
 
 window-rule {
+    geometry-corner-radius 15
+    clip-to-geometry true
+}
+
+window-rule {
     match app-id="dev.zed.Zed"
     match app-id="code-oss"
     match app-id="jetbrains-pycharm-ce"
@@ -206,6 +223,21 @@ window-rule {
 }
 
 window-rule {
+    match app-id="org.gnome.Calculator"
+    open-focused true
+    default-column-width { proportion 0.4; }
+}
+
+window-rule {
+    match app-id="org.gnome.Calendar"
+    open-focused true
+    open-floating true
+    default-column-width { proportion 0.4; }
+    default-window-height { fixed 600; }
+    default-floating-position x=404 y=34 relative-to="top-left"
+}
+
+window-rule {
     match app-id="kitty" title="kitty-floating"
     open-floating true
     default-column-width { proportion 0.73; }
@@ -215,7 +247,7 @@ window-rule {
 
 window-rule {
     match app-id="org.telegram.desktop"
-    default-column-width { proportion 0.66; }
+    default-column-width { proportion 0.7; }
 }
 
 window-rule {
@@ -252,6 +284,7 @@ window-rule {
   match app-id="nemo"
   open-focused true
   open-on-workspace "4"
+  open-maximized true
 }
 
 /-window-rule {
@@ -292,21 +325,28 @@ binds {
 
   Mod+Tab repeat=false { toggle-overview; }
 
-  Mod+Z hotkey-overlay-title="Pover menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
-
   Mod+Q hotkey-overlay-title="Close window" repeat=false { close-window; }
 
-  //Mod+A { spawn "wofi" "--show" "drun"; }
-  Mod+A hotkey-overlay-title="App launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+  // Noctalia 
+  // Mod+A hotkey-overlay-title="App launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+  // Mod+Z hotkey-overlay-title="Pover menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+  // Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+  // Mod+Shift+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+  
+  // my shell 
+  Mod+Z hotkey-overlay-title="Pover menu" { spawn "wlogout" "-b" "5"; }
+  Mod+A { spawn "wofi" "--show" "drun"; }
+  
   
   Mod+T { spawn "kitty" "--title" "kitty-floating"; }
   
-  Mod+V hotkey-overlay-title="App launcher" { spawn-sh "cliphist list | wofi --dmenu | cliphist decode | wl-copy"; }
+  Mod+E hotkey-overlay-title="Nemo" { spawn "nemo"; }
+  Mod+B hotkey-overlay-title="chromium" { spawn "chromium"; }
+  
+  Mod+V hotkey-overlay-title="Clip short" { spawn-sh "cliphist list | wofi --dmenu | cliphist decode | wl-copy"; }
 
   Mod+Left  { focus-column-left; }
   Mod+Right { focus-column-right; }
-  Alt+Left { focus-column-left; }
-  Alt+Right { focus-column-right; }
   
   Mod+H { focus-column-left; }
   Mod+L { focus-column-right; }

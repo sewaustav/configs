@@ -1,6 +1,6 @@
 {
     "appLauncher": {
-        "autoPasteClipboard": false,
+        "autoPasteClipboard": true,
         "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
         "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
         "clipboardWrapText": true,
@@ -9,12 +9,12 @@
         "density": "default",
         "enableClipPreview": true,
         "enableClipboardChips": true,
-        "enableClipboardHistory": false,
+        "enableClipboardHistory": true,
         "enableClipboardSmartIcons": true,
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
-        "iconMode": "tabler",
+        "iconMode": "native",
         "ignoreMouseInput": false,
         "overviewLayer": false,
         "pinnedApps": [
@@ -28,13 +28,16 @@
             "chrome-agimnkijcaahngcdmfeangaknmldooml-Default",
             "anytype",
             "chrome-jhfafgojnlneaffmkkjbcpnadneeocbk-Default",
-            "qalculate-gtk",
             "org.gnome.Boxes",
             "com.discordapp.Discord",
             "org.pulseaudio.pavucontrol",
             "nwg-look",
             "jetbrains-goland-eecb65e9-7305-46da-b339-d3b73b59b623",
-            "org.x.editor"
+            "org.x.editor",
+            "com.obsproject.Studio",
+            "org.gnome.Calculator",
+            "org.gnome.Calendar",
+            "org.kde.kdenlive"
         ],
         "position": "top_center",
         "screenshotAnnotationTool": "",
@@ -317,7 +320,7 @@
             }
         ],
         "diskPath": "/",
-        "position": "close_to_bar_button",
+        "position": "top_center",
         "shortcuts": {
             "left": [
                 {
@@ -372,13 +375,6 @@
                 "name": "eDP-1",
                 "widgets": [
                     {
-                        "id": "Weather",
-                        "roundedCorners": true,
-                        "showBackground": true,
-                        "x": 535,
-                        "y": 63
-                    },
-                    {
                         "clockColor": "none",
                         "clockStyle": "digital",
                         "customFont": "",
@@ -390,19 +386,6 @@
                         "useCustomFont": false,
                         "x": 583,
                         "y": 284
-                    },
-                    {
-                        "colorName": "primary",
-                        "height": 72,
-                        "hideWhenIdle": false,
-                        "id": "AudioVisualizer",
-                        "roundedCorners": true,
-                        "scale": 1,
-                        "showBackground": true,
-                        "visualizerType": "linear",
-                        "width": 320,
-                        "x": 500,
-                        "y": 537
                     }
                 ]
             }
@@ -457,10 +440,10 @@
         "clockStyle": "custom",
         "compactLockScreen": false,
         "dimmerOpacity": 0,
-        "enableBlurBehind": true,
+        "enableBlurBehind": false,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
-        "enableShadows": true,
+        "enableShadows": false,
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 1,
         "keybinds": {
@@ -538,6 +521,7 @@
     },
     "location": {
         "analogClockInCalendar": false,
+        "autoLocate": false,
         "firstDayOfWeek": 1,
         "hideWeatherCityName": false,
         "hideWeatherTimezone": false,
@@ -548,7 +532,8 @@
         "use12hourFormat": false,
         "useFahrenheit": false,
         "weatherEnabled": true,
-        "weatherShowEffects": true
+        "weatherShowEffects": true,
+        "weatherTaliaMascotAlways": false
     },
     "network": {
         "bluetoothAutoConnect": true,
@@ -571,7 +556,7 @@
     },
     "noctaliaPerformance": {
         "disableDesktopWidgets": true,
-        "disableWallpaper": true
+        "disableWallpaper": false
     },
     "notifications": {
         "backgroundOpacity": 1,
@@ -719,6 +704,14 @@
             {
                 "enabled": true,
                 "id": "cava"
+            },
+            {
+                "enabled": true,
+                "id": "telegram"
+            },
+            {
+                "enabled": true,
+                "id": "btop"
             }
         ],
         "enableUserTheming": true
@@ -750,9 +743,9 @@
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
         ],
-        "overviewBlur": 0.4,
-        "overviewEnabled": false,
-        "overviewTint": 0.6,
+        "overviewBlur": 0,
+        "overviewEnabled": true,
+        "overviewTint": 0,
         "panelPosition": "follow_bar",
         "randomIntervalSec": 300,
         "setWallpaperOnAllMonitors": true,

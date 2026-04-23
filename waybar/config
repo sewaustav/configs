@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "height": 30,
-    "modules-left": ["group/workspaces-group"],
+    "modules-left": ["custom/workspaces-button", "niri/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "hyprland/language", "custom/notification", "bluetooth", "network", "group/volume", "battery", "custom/powermenu"],
+    "modules-right": ["tray", "niri/language", "custom/notification", "bluetooth", "network", "group/volume", "battery", "custom/powermenu"],
 
     "group/workspaces-group": {
         "orientation": "horizontal",
@@ -15,14 +15,14 @@
         },
         "modules": [
             "custom/workspaces-button",
-            "hyprland/workspaces"
+            "niri/workspaces"
         ]
     },
 
     "custom/workspaces-button": {
         "format": "󰣇 ",
         "tooltip": false,
-
+        "on-click": "wofi --show drun",
         "class": "workspaces-button",
         "on-scroll-up": "",
         "on-scroll-down": ""
@@ -43,6 +43,14 @@
             "on-click-window": "~/.config/waybar/applets/focus-window.sh {address} {button}"
         }
     },
+    
+    "niri/workspaces": {
+      "format": "{icon}",
+      "workspace-taskbar": {
+        "enable": true,
+        "icon-size": 18
+      }
+    },
 
     "wlr/taskbar": {
         "icon-size": 18,
@@ -60,7 +68,7 @@
     "clock": {
         "format": "{:%H:%M %d.%m.%Y}",
         "tooltip-format": "{:%A, %d %B %Y}",
-        "on-click": "yad --calendar",
+        "on-click": "gnome-calendar",
         "interval": 60
     },
 
@@ -107,11 +115,10 @@
         "tooltip": false
     },
 
-    "hyprland/language": {
+    "niri/language": {
         "format": "{}",
         "format-en": "EN",
         "format-ru": "RU",
-        "on-click": "hyprctl switchxkblayout next"
     },
 
     "custom/notification": {

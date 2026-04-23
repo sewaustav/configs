@@ -1,35 +1,133 @@
 :root {
     --border-radius: 22px;
-    --cc-bg: transparent;
 
-    --widget-background: rgba(46, 46, 46, 0.7);
-    --noti-bg-alpha: 0.6;
+    /* Catppuccin colors */
+    --ctp-base:    #000000;
+    --ctp-mantle:  #252525;
+    --ctp-surface: #1e1e2e;
+    --ctp-overlay: #313244;
+    --ctp-text:    #cdd6f4;
+    --ctp-subtext: #a3b4eb;
+    --ctp-mauve:   #cba6f7;
+    --ctp-peach:   #fab387;
+    --ctp-teal:    #94e2d5;
+    --ctp-red:     #f38ba8;
+    --ctp-outline: #4c4f69;
 
+    --cc-bg: var(--ctp-base);
+    --widget-background: var(--ctp-mantle);
+    --noti-bg-alpha: 0.95;
     --padding: calc(var(--border-radius) / 2);
+    --border: 1px solid var(--ctp-outline);
 }
 
+/* ── Control Center ── */
 .control-center {
-    border-radius: 0;
+    border-radius: 15px;
+    background: var(--cc-bg);
 }
 
+/* ── Widgets ── */
 .widgets > .widget,
 .widget-mpris > carouselindicatordots,
 .widget-mpris > box > button {
     background: var(--widget-background);
+    color: var(--ctp-text);
     border-radius: var(--border-radius);
     padding: calc(var(--border-radius) / 2);
     border: var(--border);
 }
 
-.control-center-list-placeholder {
-    padding: var(--border-radius);
+/* Title widget */
+.widget-title > label {
+    color: var(--ctp-mauve);
+    font-weight: bold;
+}
+.widget-title > button {
+    background: var(--ctp-mantle);
+    color: var(--ctp-peach);
+    border: var(--border);
+    border-radius: calc(var(--border-radius) / 2);
+}
+.widget-title > button:hover {
+    background: var(--ctp-overlay);
+    color: var(--ctp-mauve);
 }
 
+/* DND toggle */
+.widget-dnd > switch {
+    background: var(--ctp-outline);
+    border-radius: 999px;
+}
+.widget-dnd > switch:checked {
+    background: var(--ctp-mauve);
+}
+.widget-dnd > switch slider {
+    background: var(--ctp-base);
+    border-radius: 999px;
+}
+.widget-dnd > label {
+    color: var(--ctp-text);
+}
+
+/* Inhibitors */
+.widget-inhibitors > label {
+    color: var(--ctp-text);
+}
+.widget-inhibitors > button {
+    background: var(--ctp-mantle);
+    color: var(--ctp-peach);
+    border: var(--border);
+    border-radius: calc(var(--border-radius) / 2);
+}
+.widget-inhibitors > button:hover {
+    background: var(--ctp-overlay);
+    color: var(--ctp-mauve);
+}
+
+/* ── Notifications ── */
+.control-center-list-placeholder {
+    padding: var(--border-radius);
+    color: var(--ctp-subtext);
+}
 .notification-group {
     border-radius: var(--border-radius);
     padding: 8px;
 }
+.notification {
+    background: var(--ctp-mantle);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    color: var(--ctp-text);
+}
+.notification-content {
+    background: transparent;
+}
+.notification-label {
+    color: var(--ctp-text);
+}
+.notification-action {
+    background: var(--ctp-overlay);
+    color: var(--ctp-mauve);
+    border-radius: calc(var(--border-radius) / 2);
+    border: var(--border);
+}
+.notification-action:hover {
+    background: var(--ctp-mauve);
+    color: var(--ctp-base);
+}
+.close-button {
+    background: var(--ctp-mantle);
+    color: var(--ctp-red);
+    border: var(--border);
+    border-radius: 999px;
+}
+.close-button:hover {
+    background: var(--ctp-red);
+    color: var(--ctp-base);
+}
 
+/* ── MPRIS ── */
 .widget.widget-mpris {
     background: transparent;
     border-radius: 0;
@@ -45,13 +143,24 @@
     margin-top: var(--padding);
 }
 .widget-mpris > box > button:hover {
-    background: rgba(46, 46, 46, 1);
+    background: var(--ctp-overlay);
+    color: var(--ctp-teal);
 }
 .widget-mpris-player {
+    background: var(--ctp-mantle);
+    color: var(--ctp-text);
     box-shadow: none;
     border: var(--border);
+    border-radius: var(--border-radius);
     margin: 0 var(--padding);
 }
 .widget-mpris-player:only-child {
     margin: 0;
+}
+.widget-mpris-title {
+    color: var(--ctp-mauve);
+    font-weight: bold;
+}
+.widget-mpris-subtitle {
+    color: var(--ctp-subtext);
 }

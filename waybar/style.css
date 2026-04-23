@@ -5,9 +5,9 @@
 }
 
 #waybar {
-    background: transparent;
-    /*background: #000000;
-    border-radius: 10px;*/
+    /*background: transparent;*/
+    background: #000000;
+    /*border-radius: 10px;*/
 }
 
 .modules-left {
@@ -30,20 +30,31 @@
 #workspaces {
     border-radius: 10px;
     background-color: #151719;
+    padding: 2px;
 }
 
 #workspaces button {
     min-width: 28px;
-    padding: 0 6px 0 12px;
+    padding: 0 2px 0 2px;
 }
 
-#workspaces button.active {
-    background: #25a2d8;
+#workspaces button.niri-workspace.active {
+    border: 1px solid #25a2d8;
     border-radius: 10px;
 }
 
+#workspaces button.niri-workspace:not(.active) {
+    border: 1px solid #42464d;
+    border-radius: 10px;
+}
+
+#workspaces button.niri-workspace:hover {
+    border: 1px solid #f38ba8;
+}
+
 #workspaces button:hover {
-    background: #25a2d8;
+    /*background-color: #f38ba8;*/
+    /*border: 1px solid #f38ba8;*/
     border-radius: 10px;
 }
 
@@ -83,7 +94,7 @@
 
 #pulseaudio-slider trough {
     min-height: 10px;
-    min-width: 100px;
+    min-width: 110px;
     border-radius: 5px;
     background: black;
 }
