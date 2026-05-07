@@ -37,14 +37,15 @@
             "com.obsproject.Studio",
             "org.gnome.Calculator",
             "org.gnome.Calendar",
-            "org.kde.kdenlive"
+            "org.kde.kdenlive",
+            "firefox"
         ],
         "position": "top_center",
         "screenshotAnnotationTool": "",
         "showCategories": true,
         "showIconBackground": false,
         "sortByMostUsed": true,
-        "terminalCommand": "alacritty -e",
+        "terminalCommand": "kitty -e",
         "viewMode": "grid"
     },
     "audio": {
@@ -56,7 +57,7 @@
         "visualizerType": "linear",
         "volumeFeedback": false,
         "volumeFeedbackSoundFile": "",
-        "volumeOverdrive": false,
+        "volumeOverdrive": true,
         "volumeStep": 5
     },
     "bar": {
@@ -112,6 +113,7 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
                     "customIconPath": "/home/sewaustav/Downloads/archlinux-icon.svg",
                     "enableColorization": false,
                     "icon": "noctalia",
@@ -120,6 +122,7 @@
                 },
                 {
                     "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": false,
                     "icon": "rocket",
@@ -137,7 +140,7 @@
                     "fontWeight": "bold",
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": false,
-                    "iconScale": 0.8,
+                    "iconScale": 0.81,
                     "id": "Workspace",
                     "labelMode": "none",
                     "occupiedColor": "secondary",
@@ -155,7 +158,7 @@
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
-                    "maxWidth": 145,
+                    "maxWidth": 31,
                     "panelShowAlbumArt": true,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
@@ -176,6 +179,36 @@
                     "id": "Tray",
                     "pinned": [
                     ]
+                },
+                {
+                    "defaultSettings": {
+                        "autoMount": false,
+                        "fileBrowser": "yazi",
+                        "hideWhenEmpty": false,
+                        "iconColor": "none",
+                        "showBadge": false,
+                        "showNotifications": true,
+                        "terminalCommand": "kitty"
+                    },
+                    "id": "plugin:usb-drive-manager"
+                },
+                {
+                    "defaultSettings": {
+                        "activeColor": "primary",
+                        "camFilterRegex": "",
+                        "enableToast": true,
+                        "hideInactive": false,
+                        "iconSpacing": 4,
+                        "inactiveColor": "none",
+                        "micFilterRegex": "",
+                        "removeMargins": false
+                    },
+                    "id": "plugin:privacy-indicator"
+                },
+                {
+                    "defaultSettings": {
+                    },
+                    "id": "plugin:kde-connect"
                 },
                 {
                     "hideWhenZero": false,
@@ -208,10 +241,11 @@
                 },
                 {
                     "colorizeSystemIcon": "none",
-                    "enableColorization": false,
+                    "colorizeSystemText": "none",
                     "generalTooltipText": "bluetooth",
                     "hideMode": "alwaysExpanded",
                     "icon": "bluetooth",
+                    "iconPosition": "left",
                     "id": "CustomButton",
                     "ipcIdentifier": "",
                     "leftClickExec": "blueman-manager",
@@ -360,6 +394,14 @@
                     "onRightClicked": "",
                     "showExecTooltip": false,
                     "stateChecksJson": "[]"
+                },
+                {
+                    "id": "DarkMode"
+                },
+                {
+                    "defaultSettings": {
+                    },
+                    "id": "plugin:kde-connect"
                 }
             ],
             "right": [
@@ -386,6 +428,18 @@
                         "useCustomFont": false,
                         "x": 583,
                         "y": 284
+                    },
+                    {
+                        "colorName": "primary",
+                        "height": 72,
+                        "hideWhenIdle": false,
+                        "id": "AudioVisualizer",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "visualizerType": "linear",
+                        "width": 320,
+                        "x": 120,
+                        "y": 280
                     }
                 ]
             }
@@ -417,9 +471,9 @@
         ],
         "onlySameOutput": true,
         "pinnedApps": [
+            "dev.zed.Zed",
             "chromium",
-            "org.telegram.desktop",
-            "dev.zed.Zed"
+            "org.telegram.desktop"
         ],
         "pinnedStatic": false,
         "position": "bottom",
@@ -536,7 +590,7 @@
         "weatherTaliaMascotAlways": false
     },
     "network": {
-        "bluetoothAutoConnect": true,
+        "bluetoothAutoConnect": false,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 60000,
@@ -573,8 +627,8 @@
         "monitors": [
         ],
         "normalUrgencyDuration": 3,
-        "overlayLayer": true,
-        "respectExpireTimeout": false,
+        "overlayLayer": false,
+        "respectExpireTimeout": true,
         "saveToHistory": {
             "critical": true,
             "low": true,
@@ -606,10 +660,10 @@
     },
     "plugins": {
         "autoUpdate": false,
-        "notifyUpdates": true
+        "notifyUpdates": false
     },
     "sessionMenu": {
-        "countdownDuration": 10000,
+        "countdownDuration": 5000,
         "enableCountdown": true,
         "largeButtonsLayout": "single-row",
         "largeButtonsStyle": true,
@@ -726,7 +780,7 @@
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
-        "settingsPanelSideBarCardStyle": false,
+        "settingsPanelSideBarCardStyle": true,
         "tooltipsEnabled": true,
         "translucentWidgets": false
     },

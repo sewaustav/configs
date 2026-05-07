@@ -22,7 +22,8 @@
 }
 
 .modules-right {
-    padding-right: 10px;
+    /*padding-right: 5px;*/
+    /*margin: 0;*/
     border-radius: 10px;
     background-color: #151719;
 }
@@ -35,7 +36,7 @@
 
 #workspaces button {
     min-width: 28px;
-    padding: 0 2px 0 2px;
+    padding: 0 1px 0 1px;
 }
 
 #workspaces button.niri-workspace.active {
@@ -63,16 +64,41 @@
 #network,
 #bluetooth,
 #memory,
-#custom-powermenu,
-#custom-notification,
-#hyprland-language,
+#language,
 #pulseaudio,
-#battery,
+#battery {
+    /*padding: 0 10px;
+    margin: 0 2px;*/
+    padding: 0 7px;
+    /*border: 1px solid #42464d;*/
+}
+
 #tray {
-    padding: 0 10px;
+    padding: 0 7px;
+    color: #000000;
+}
+
+#tray menu {
+    background: #eff1f5;
+    color: #000000;
+}
+
+#tray menu menuitem {
+    color: #4c4f69;
+}
+
+#custom-notification {
+    padding-right: 12px;
+    padding-left: 5px;
+}
+
+#custom-powermenu {
+    padding-right: 12px;
+    padding-left: 5px;
 }
 
 #pulseaudio {
+    padding: 0 7px;
     background-color: #151719;
     border-radius: 10px;
     color: #ffffff;
@@ -94,7 +120,7 @@
 
 #pulseaudio-slider trough {
     min-height: 10px;
-    min-width: 110px;
+    min-width: 100px;
     border-radius: 5px;
     background: black;
 }

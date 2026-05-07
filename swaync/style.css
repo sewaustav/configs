@@ -23,7 +23,7 @@
 
 /* ── Control Center ── */
 .control-center {
-    border-radius: 15px;
+    border-radius: 25px;
     background: var(--cc-bg);
 }
 

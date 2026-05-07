@@ -77,7 +77,6 @@ cursor {
 layer-rule {
   match namespace="^noctalia-wallpaper*"
   place-within-backdrop true
-  opacity 0.5
 }
 
 spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
@@ -321,8 +320,6 @@ binds {
   Mod+Z hotkey-overlay-title="Pover menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
   Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
   Mod+Shift+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
-  Mod+N { spawn-sh "qs -c noctalia-shell ipc call notifications toggleDND"; }
-  Mod+Shift+N { spawn-sh "qs -c noctalia-shell ipc call notifications clear"; }
   
   Mod+T { spawn "kitty" "--title" "kitty-floating"; }
   
@@ -330,8 +327,7 @@ binds {
   Mod+B hotkey-overlay-title="chromium" { spawn "chromium"; }
   
   Mod+V hotkey-overlay-title="Clip short" { spawn-sh "cliphist list | wofi --dmenu | cliphist decode | wl-copy"; }
-  Mod+Ctrl+V { spawn-sh "cliphist wipe"; }
-  
+
   Mod+Left  { focus-column-left; }
   Mod+Right { focus-column-right; }
   
