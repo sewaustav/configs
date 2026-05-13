@@ -8,24 +8,30 @@ return {
     "saadparwaiz1/cmp_luasnip",
   },
   config = function()
-    local cmp = require("cmp")
-    local luasnip = require("luasnip")
-
-    cmp.setup({
-      snippet = {
-        expand = function(args) luasnip.lsp_expand(args.body) end,
-      },
-      mapping = cmp.mapping.preset.insert({
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<Tab>"] = cmp.mapping.select_next_item(),
-        ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-      }),
-      sources = {
-        { name = "nvim_lsp" },
-        { name = "path" },
-        { name = "buffer" },
-      },
-    })
+      -- Теперь вместо require('lspconfig') используем нативный API Neovim 0.11
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local servers = { "gopls", "pyright", "ts_ls", "pasls", "dartls" }
+  
+      for _, lsp in ipairs(servers) do
+          -- НОВЫЙ СИНТАКСИС:
+          vim.lsp.config(lsp, {
+              install = true, -- автоматически ставить через mason, если нужно
+              capabilities = capabilities,
+          })
+          -- Активируем сервер
+          vim.lsp.enable(lsp)
+      end
+  
+      -- Твой автокоманд LspAttach остается без изменений, он правильный
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local opts = { buffer = args.buf }
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+          vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+          vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+          vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+        end,
+      })
   end,
 }

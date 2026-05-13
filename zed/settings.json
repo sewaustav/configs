@@ -84,8 +84,8 @@
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "theme": {
-    "mode": "dark",
-    "light": "Monokai Night Soft",
+    "mode": "system",
+    "light": "Zedokai Light",
     "dark": "Zedokai Darker (Filter Spectrum)",
   },
 }

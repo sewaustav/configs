@@ -20,7 +20,6 @@
         "pinnedApps": [
             "chromium",
             "dev.zed.Zed",
-            "nemo",
             "code-oss",
             "pycharm",
             "org.telegram.desktop",
@@ -38,7 +37,9 @@
             "org.gnome.Calculator",
             "org.gnome.Calendar",
             "org.kde.kdenlive",
-            "firefox"
+            "firefox",
+            "jetbrains-goland",
+            "nemo"
         ],
         "position": "top_center",
         "screenshotAnnotationTool": "",
@@ -87,7 +88,7 @@
         "outerCorners": false,
         "position": "top",
         "reverseScroll": false,
-        "rightClickAction": "controlCenter",
+        "rightClickAction": "none",
         "rightClickCommand": "",
         "rightClickFollowMouse": true,
         "screenOverrides": [
@@ -794,23 +795,28 @@
         "fillColor": "#000000",
         "fillMode": "crop",
         "hideWallpaperFilenames": false,
-        "linkLightAndDarkWallpapers": true,
+        "linkLightAndDarkWallpapers": false,
         "monitorDirectories": [
         ],
         "overviewBlur": 0,
         "overviewEnabled": true,
         "overviewTint": 0,
-        "panelPosition": "follow_bar",
+        "panelPosition": "center",
         "randomIntervalSec": 300,
         "setWallpaperOnAllMonitors": true,
         "showHiddenFiles": false,
         "skipStartupTransition": false,
         "solidColor": "#1a1a2e",
         "sortOrder": "name",
-        "transitionDuration": 1500,
+        "transitionDuration": 4000,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": [
-            "disc"
+            "disc",
+            "fade",
+            "stripes",
+            "wipe",
+            "pixelate",
+            "honeycomb"
         ],
         "useOriginalImages": false,
         "useSolidColor": false,
