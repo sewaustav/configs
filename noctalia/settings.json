@@ -29,7 +29,6 @@
             "chrome-jhfafgojnlneaffmkkjbcpnadneeocbk-Default",
             "org.gnome.Boxes",
             "com.discordapp.Discord",
-            "org.pulseaudio.pavucontrol",
             "nwg-look",
             "jetbrains-goland-eecb65e9-7305-46da-b339-d3b73b59b623",
             "org.x.editor",
@@ -39,7 +38,8 @@
             "org.kde.kdenlive",
             "firefox",
             "jetbrains-goland",
-            "nemo"
+            "nemo",
+            "Photoshop"
         ],
         "position": "top_center",
         "screenshotAnnotationTool": "",
@@ -322,7 +322,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Catppuccin Dark",
+        "predefinedScheme": "Ayu",
         "schedulingMode": "off",
         "syncGsettings": true,
         "useWallpaperColors": false
@@ -452,8 +452,8 @@
         "backgroundOpacity": 1,
         "colorizeIcons": false,
         "deadOpacity": 0.6,
-        "displayMode": "auto_hide",
-        "dockType": "floating",
+        "displayMode": "exclusive",
+        "dockType": "attached",
         "enabled": false,
         "floatingRatio": 0.81,
         "groupApps": false,
@@ -481,7 +481,7 @@
         "showDockIndicator": false,
         "showLauncherIcon": false,
         "sitOnFrame": false,
-        "size": 1
+        "size": 0.8200000000000001
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
@@ -616,7 +616,7 @@
     "notifications": {
         "backgroundOpacity": 1,
         "clearDismissed": true,
-        "criticalUrgencyDuration": 3,
+        "criticalUrgencyDuration": 2,
         "density": "default",
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": false,
@@ -624,10 +624,10 @@
         "enableMediaToast": false,
         "enabled": true,
         "location": "top",
-        "lowUrgencyDuration": 3,
+        "lowUrgencyDuration": 2,
         "monitors": [
         ],
-        "normalUrgencyDuration": 3,
+        "normalUrgencyDuration": 2,
         "overlayLayer": false,
         "respectExpireTimeout": true,
         "saveToHistory": {
@@ -763,10 +763,6 @@
             {
                 "enabled": true,
                 "id": "telegram"
-            },
-            {
-                "enabled": true,
-                "id": "btop"
             }
         ],
         "enableUserTheming": true
@@ -813,9 +809,7 @@
         "transitionType": [
             "disc",
             "fade",
-            "stripes",
             "wipe",
-            "pixelate",
             "honeycomb"
         ],
         "useOriginalImages": false,

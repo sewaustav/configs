@@ -1,3 +1,5 @@
+include "theme.kdl"
+
 input {
   keyboard {
     xkb {
@@ -5,8 +7,9 @@ input {
       // options "grp:caps_toggle"
       options "grp:win_space_toggle"
     }
-    numlock
+    // numlock
   }
+
 
   touchpad {
     disabled-on-external-mouse
@@ -74,11 +77,11 @@ cursor {
     xcursor-size 24
 }
 
-layer-rule {
-  match namespace="^noctalia-wallpaper*"
-  place-within-backdrop true
-  opacity 0.5
+environment {
+    QT_QPA_PLATFORMTHEME "gtk3"
+    QT_QPA_PLATFORM "wayland"
 }
+
 
 spawn-sh-at-startup "~/.config/niri/scripts/niri_gtk_schema.py"
 spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
@@ -86,6 +89,7 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=niri; systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gnome; systemctl --user start pipewire wireplumber xdg-desktop-portal"
+// spawn-at-startup "niri-float-sticky"
 
 hotkey-overlay {
     skip-at-startup
@@ -203,7 +207,10 @@ window-rule {
 window-rule {
   match app-id="" title="kitty-tiling"
   open-floating false
-  opacity 0.96
+  opacity 0.85
+  background-effect {
+          blur true
+      }
 }
 
 window-rule {
@@ -317,6 +324,13 @@ binds {
   Mod+Tab repeat=false { toggle-overview; }
 
   Mod+Q hotkey-overlay-title="Close window" repeat=false { close-window; }
+
+  // XF86Tools { focus-column-right; }
+  // XF86Launch5 { focus-column-left; }
+  KP_Right { focus-column-right; }
+  KP_Left { focus-column-left; }
+  KP_Up { focus-workspace-up; }
+  KP_Down { focus-workspace-down; }
 
   // Noctalia 
   Mod+A hotkey-overlay-title="App launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
