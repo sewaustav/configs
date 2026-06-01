@@ -64,7 +64,7 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0.93,
         "barType": "simple",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
@@ -449,7 +449,7 @@
     },
     "dock": {
         "animationSpeed": 1,
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0,
         "colorizeIcons": false,
         "deadOpacity": 0.6,
         "displayMode": "exclusive",
@@ -495,7 +495,7 @@
         "clockStyle": "custom",
         "compactLockScreen": false,
         "dimmerOpacity": 0,
-        "enableBlurBehind": false,
+        "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
         "enableShadows": false,
@@ -776,10 +776,10 @@
         "panelBackgroundOpacity": 1,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
-        "settingsPanelMode": "attached",
-        "settingsPanelSideBarCardStyle": true,
+        "settingsPanelMode": "centered",
+        "settingsPanelSideBarCardStyle": false,
         "tooltipsEnabled": true,
-        "translucentWidgets": false
+        "translucentWidgets": true
     },
     "wallpaper": {
         "automationEnabled": false,
