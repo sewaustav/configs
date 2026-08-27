@@ -86,12 +86,15 @@ environment {
 
 spawn-sh-at-startup "~/.config/niri/scripts/niri_gtk_schema.py"
 spawn-sh-at-startup "~/.config/niri/scripts/niri_numpad_toggle.py"
-spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
+spawn-sh-at-startup "env QT_QPA_PLATFORMTHEME=gtk3 dms run"
+// spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
+// spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=niri; systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gnome; systemctl --user start pipewire wireplumber xdg-desktop-portal"
 // spawn-at-startup "niri-float-sticky"
+
 
 hotkey-overlay {
     skip-at-startup
@@ -122,13 +125,15 @@ animations {
   }
 
   window-movement {
-      duration-ms 400
-      curve "ease-out-expo"
+      // duration-ms 400
+      // curve "ease-out-expo"
+      spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
   }
 
   window-resize {
-    duration-ms 450
-    curve "ease-out-expo"
+    // duration-ms 450
+    // curve "ease-out-expo"
+    spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
   }
 
   config-notification-open-close {
@@ -145,8 +150,9 @@ animations {
   }
 
   overview-open-close {
-      duration-ms 150
-      curve "ease-out-quad"
+      // duration-ms 150
+      // curve "ease-out-quad"
+      spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
   }
 
   recent-windows-close {
@@ -178,6 +184,13 @@ window-rule {
     match app-id="jetbrains-pycharm-ce"
     match app-id="jetbrains-goland"
     
+    open-on-workspace "2"
+    open-maximized-to-edges true
+    open-focused true
+}
+
+window-rule {
+    match app-id="DBeaver"
     open-on-workspace "2"
     open-maximized-to-edges true
     open-focused true
@@ -337,19 +350,21 @@ binds {
   // KP_Up { focus-workspace-up; }
   // KP_Down { focus-workspace-down; }
 
-  // Noctalia 
-  Mod+A hotkey-overlay-title="App launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-  Mod+Z hotkey-overlay-title="Pover menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
-  Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
-  Mod+Shift+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
-  Mod+N { spawn-sh "qs -c noctalia-shell ipc call notifications toggleDND"; }
-  Mod+Alt+N { spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory"; }
-  Mod+Shift+N { spawn-sh "qs -c noctalia-shell ipc call notifications clear"; }
+  // // Noctalia 
+  // Mod+A hotkey-overlay-title="App launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+  // Mod+Z hotkey-overlay-title="Pover menu" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+  // Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+  // Mod+Shift+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+  // Mod+N { spawn-sh "qs -c noctalia-shell ipc call notifications toggleDND"; }
+  // Mod+Alt+N { spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory"; }
+  // Mod+Shift+N { spawn-sh "qs -c noctalia-shell ipc call notifications clear"; }
   
-  Mod+T { spawn "kitty" "--title" "kitty-floating"; }
+  Mod+O { spawn "kitty" "--title" "kitty-floating"; }
   
   Mod+E hotkey-overlay-title="Nemo" { spawn "nemo"; }
   Mod+B hotkey-overlay-title="chromium" { spawn "chromium"; }
+  Mod+T hotkey-overlay-title="telegram" { spawn "Telegram" ; }
+  
   
   Mod+V hotkey-overlay-title="Clip short" { spawn-sh "cliphist list | wofi --dmenu | cliphist decode | wl-copy"; }
   Mod+Ctrl+V { spawn-sh "cliphist wipe"; }
@@ -477,3 +492,6 @@ binds {
 
   Mod+Shift+P { power-off-monitors; }
 }
+
+// DMS Include Configs
+include "dms/binds.kdl"

@@ -1,0 +1,7 @@
+binds {
+    Mod+A hotkey-overlay-title="Default Launcher: Toggle" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Mod+G hotkey-overlay-title="Control Center: Toggle" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
+    Mod+P hotkey-overlay-title="Color Picker: Toggle" { spawn "dms" "ipc" "call" "color-picker" "toggle"; }
+    Mod+S hotkey-overlay-title="Settings: Toggle" { spawn "dms" "ipc" "call" "settings" "toggle"; }
+    Mod+Z hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+}

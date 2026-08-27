@@ -1,0 +1,16 @@
+{
+  "wallpaperCarousel": {
+    "enabled": true
+  },
+  "caffeine": {
+    "enabled": true,
+    "selectedDuration": "infinity"
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "timeManager": {
+    "enabled": true
+  }
+}
