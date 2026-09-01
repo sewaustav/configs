@@ -1,6 +1,2 @@
 binds {
-    KP_Right { focus-column-right; }
-    KP_Left { focus-column-left; }
-    KP_Up { focus-workspace-up; }
-    KP_Down { focus-workspace-down; }
 }

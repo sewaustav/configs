@@ -166,16 +166,6 @@
       "id": "idleInhibitor",
       "enabled": true,
       "width": 50
-    },
-    {
-      "id": "doNotDisturb",
-      "enabled": true,
-      "width": 50
-    },
-    {
-      "id": "plugin_caffeine",
-      "enabled": true,
-      "width": 50
     }
   ],
   "showWorkspaceIndex": false,
@@ -521,7 +511,7 @@
   "notificationCompactMode": false,
   "notificationShowTimeoutBar": false,
   "notificationDedupeEnabled": true,
-  "notificationPopupPosition": 0,
+  "notificationPopupPosition": -1,
   "notificationAnimationSpeed": 1,
   "notificationCustomAnimationDuration": 400,
   "notificationHistoryEnabled": true,
@@ -566,7 +556,7 @@
   "updaterUseCustomCommand": false,
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
-  "updaterIntervalSeconds": 1800,
+  "updaterIntervalSeconds": 86400,
   "updaterIncludeFlatpak": true,
   "updaterAllowAUR": true,
   "updaterIgnoredPackages": [],
