@@ -1,14 +1,15 @@
 {
   "currentThemeName": "custom",
   "currentThemeCategory": "registry",
-  "customThemeFile": "/home/sewaustav/.config/DankMaterialShell/themes/oxocarbon/theme.json",
+  "customThemeFile": "/home/sewaustav/.config/DankMaterialShell/themes/peaceAndQuiet/theme.json",
   "registryThemeVariants": {
     "amoledBlack": {
       "dark": {
         "flavor": "black",
-        "accent": "blue"
+        "accent": "turquoise"
       }
-    }
+    },
+    "peaceAndQuiet": "blue"
   },
   "matugenScheme": "scheme-tonal-spot",
   "matugenContrast": 0,
