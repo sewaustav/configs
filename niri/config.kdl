@@ -262,6 +262,12 @@ window-rule {
 }
 
 window-rule {
+    match app-id="com.danklinux.dms" title="Settings"
+
+    open-floating true
+}
+
+window-rule {
     match app-id="org.telegram.desktop"
     default-column-width { proportion 0.7; }
 }
