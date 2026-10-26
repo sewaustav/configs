@@ -92,7 +92,8 @@ spawn-sh-at-startup "env QT_QPA_PLATFORMTHEME=gtk3 dms run"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=niri; systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gnome; systemctl --user start pipewire wireplumber xdg-desktop-portal"
+spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=GNOME; systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-gnome xdg-desktop-portal-gtk; systemctl --user start pipewire wireplumber xdg-desktop-portal-gnome xdg-desktop-portal-gtk xdg-desktop-portal"
+// spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=niri; systemctl --user stop pipewire wireplumber xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gnome; systemctl --user start pipewire wireplumber xdg-desktop-portal"
 // spawn-at-startup "niri-float-sticky"
 
 
@@ -237,7 +238,7 @@ window-rule {
 
 window-rule {
     match app-id="org.gnome.Calculator"
-    open-focused true
+    open-focused false
     default-column-width { proportion 0.4; }
 }
 
@@ -371,6 +372,7 @@ binds {
   Mod+E hotkey-overlay-title="Nemo" { spawn "nemo"; }
   Mod+B hotkey-overlay-title="chromium" { spawn "chromium"; }
   Mod+T hotkey-overlay-title="telegram" { spawn "Telegram" ; }
+  Mod+Alt+C { spawn "gnome-calculator" ; }
   
   
   Mod+V hotkey-overlay-title="Clip short" { spawn-sh "cliphist list | wofi --dmenu | cliphist decode | wl-copy"; }
@@ -418,8 +420,10 @@ binds {
   Mod+Shift+U         { move-workspace-down; }
   Mod+Shift+I         { move-workspace-up; }
 
-  Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-  Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+  Mod+Ctrl+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+  Mod+Ctrl+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+  Mod+WheelScrollDown      { focus-column-right; }
+  Mod+WheelScrollUp        { focus-column-left; }
   Mod+Shift+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
   Mod+Shift+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
   
@@ -433,8 +437,7 @@ binds {
   Mod+Ctrl+WheelScrollRight { move-column-right; }
   Mod+Ctrl+WheelScrollLeft  { move-column-left; }
 
-  Mod+Ctrl+WheelScrollDown      { focus-column-right; }
-  Mod+Ctrl+WheelScrollUp        { focus-column-left; }
+
   Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
   Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
 
